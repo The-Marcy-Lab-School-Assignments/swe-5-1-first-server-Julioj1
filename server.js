@@ -3,6 +3,9 @@ const http = require('node:http');
 const server = http.createServer((req, res) => {
     const { method } = req;
     const { pathname, searchParams } = new URL(req.url, 'http://localhost:8080');
+    const date = new Date().toISOString();
+
+    console.log(method, pathname, date);
 
     if (method === 'GET' && pathname === '/') {
         res.writeHead(200, { 'Content-Type': 'text/plain' });
