@@ -14,7 +14,7 @@ const server = http.createServer((req, res) => {
     } 
     if (method === 'GET' && pathname === '/api/joke') {
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        const responseBody = JSON.stringify({ setup: 'Hola', punchline: 'Adios' });
+        const responseBody = JSON.stringify({ setup: `Why don't scientists trust atoms?`, punchline: 'Because they make up everything' });
         res.end(responseBody);
         return;
     }
